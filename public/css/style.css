@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -58,7 +59,7 @@ header nav ul li {
 }
 
 header nav ul li:hover {
-  color: #6d99f1;
+  color: #76a4ff;
   font-weight: 700;
   text-shadow: 0 1px 2px rgba(224, 224, 224, 0.5);
 }
@@ -78,7 +79,7 @@ header .main-text h1 {
   font-size: 50px;
   color: #ffffff;
   letter-spacing: 2.19px;
-  margin-bottom: 0;
+  margin-bottom: 3px;
 }
 
 header .main-text h4 {
@@ -131,8 +132,8 @@ header .main-text h4 {
 }
 
 #introduce p {
-  font-size: 16px;
-  letter-spacing: 1.19px;
+  font-size: 17px;
+  letter-spacing: 2.09px;
   line-height: 30px;
 }
 
@@ -209,13 +210,15 @@ header .main-text h4 {
   font-size: 20px;
   letter-spacing: 1.32px;
   margin-bottom: 15px;
-  font-weight: 700;
+  font-family: PingFangTC;
+  font-weight: 500;
 }
 
 #aboutme-cont #experience .expe .content ul li {
   font-size: 16px;
-  letter-spacing: 1.19px;
+  letter-spacing: 2.09px;
   margin-top: 13px;
+  font-family: PingFangTC,微軟正黑體;
 }
 
 #aboutme-cont #experience .expe .content ul li:nth-child(1) {
@@ -232,7 +235,7 @@ header .main-text h4 {
 }
 
 #aboutme-cont #skills .skills {
-  margin-top: 25px;
+  margin-top: 28px;
 }
 
 #aboutme-cont #skills .skills .text {
@@ -247,11 +250,10 @@ header .main-text h4 {
 }
 
 #aboutme-cont #skills .skills .text p {
-  font-size: 16px;
+  font-size: 14px;
   letter-spacing: 1.19px;
   font-weight: 700;
   margin-bottom: 8px;
-  font-family: DINAlternate;
 }
 
 #aboutme-cont #skills .skills .bar {
@@ -394,7 +396,7 @@ header .main-text h4 {
 }
 
 .portfolio .port-box .text button:hover a {
-  color: #80a6e9;
+  color: #90b0e7;
 }
 
 .portfolio .port-box:nth-child(even) .text {
