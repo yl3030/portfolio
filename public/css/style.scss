@@ -1,0 +1,339 @@
+$title-font: BanglaMN;
+$title-color: #7b98cf;
+@mixin bg-img {
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "PingFangTC", 微軟正黑體;
+	box-sizing: border-box;
+	outline: none !important;
+}
+
+body {
+	color: #656565;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+header {
+	width: 100%;
+	height: 100vh;
+	background-image: url(../img/banner.JPG);
+	@include bg-img;
+	position: relative;
+	nav {
+		height: 100px;
+		display: flex;
+		justify-content: space-between;
+		ul {
+			li {
+				display: inline-block;
+				line-height: 100px;
+				margin-left: 35px;
+				font-family: $title-font;
+				font-size: 16px;
+				color: #ffffff;
+				letter-spacing: 0.76px;
+			}
+		}
+	}
+	.main-text {
+		position: absolute;
+		top: 42%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+		h1 {
+			font-family: $title-font;
+			font-weight: 700;
+			font-size: 50px;
+			color: #ffffff;
+			letter-spacing: 2.19px;
+			margin-bottom: 0;
+		}
+		h4 {
+			font-family: DINAlternate;
+			font-weight: 700;
+			font-size: 16px;
+			color: #718aba;
+			background-color: #fff;
+			letter-spacing: 0.7px;
+			padding: 6px 10px;
+			border-radius: 0 13px 0 13px;
+		}
+	}
+}
+
+.myphoto {
+	width: 30%;
+	height: 0;
+	padding-bottom: 35%;
+	border-radius: 0 0 150px 0;
+	background-color: #e8f0ff;
+	background-image: url(../img/myphoto.jpg);
+	@include bg-img;
+	display: inline-block;
+}
+
+.title {
+	font-family: $title-font;
+	color: $title-color;
+	font-size: 30px;
+	font-weight: 700;
+	margin-bottom: 25px;
+}
+
+.second-title {
+	font-family: $title-font;
+	color: $title-color;
+	font-weight: 700;
+	font-size: 24px;
+	letter-spacing: 1.05px;
+	margin-bottom: 25px;
+}
+
+#introduce {
+	display: inline-block;
+	width: 60%;
+	vertical-align: top;
+	padding-left: 85px;
+	padding-top: 65px;
+	p {
+		font-size: 18px;
+		letter-spacing: 1.19px;
+		line-height: 30px;
+	}
+	.contact {
+		margin-top: 70px;
+		.contact-cont {
+			margin-bottom: 13px;
+			line-height: 20px;
+			i {
+				font-size: 20px;
+				color: #95abd7;
+				display: inline-block;
+				vertical-align: middle;
+				margin-right: 15px;
+			}
+			p {
+				display: inline-block;
+				vertical-align: middle;
+				margin: 0;
+			}
+		}
+	}
+}
+
+#aboutme-cont {
+	margin-top: 55px;
+	display: flex;
+	justify-content: space-between;
+	#experience {
+		padding-right: 15px;
+		width: 60%;
+		.expe {
+			margin-top: 30px;
+			.period {
+				width: 30%;
+				display: inline-block;
+				background-color: #8da6d6;
+				vertical-align: top;
+				padding: 7px 0 4px;
+				border-radius: 15px 0 15px 0;
+				p {
+					font-family: $title-font;
+					font-size: 12px;
+					font-weight: 700;
+					color: #ffffff;
+					letter-spacing: 0.57px;
+					text-align: center;
+					margin: 3px 0 0;
+				}
+			}
+			.content {
+				width: 69%;
+				display: inline-block;
+				padding-left: 10px;
+				.expe-title {
+					color: $title-color;
+					font-size: 20px;
+					letter-spacing: 1.32px;
+					margin-bottom: 15px;
+				}
+				ul {
+					li {
+						font-size: 18px;
+						letter-spacing: 1.19px;
+						margin-top: 10px;
+					}
+					li:nth-child(1) {
+						margin-top: 0;
+					}
+				}
+			}
+		}
+	}
+	.expe:nth-child(1) {
+		margin-top: 0;
+	}
+	#skills {
+		padding-left: 15px;
+		width: 40%;
+		.skills {
+			margin-top: 25px;
+			.text {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-between;
+				p {
+					font-size: 18px;
+					letter-spacing: 1.19px;
+					font-weight: 700;
+					margin-bottom: 8px;
+				}
+			}
+			.bar {
+				width: 100%;
+				height: 15px;
+				border-radius: 15px;
+				background-color: #f0f0f0;
+				.length {
+					height: 100%;
+					background-color: #c3d3f2;
+					border-radius: 15px;
+					width: 60%;
+				}
+			}
+		}
+	}
+	.skills:nth-child(1) {
+		margin-top: 0;
+	}
+}
+
+.portfolio {
+	margin-top: 50px;
+	background-color: rgba(246, 250, 255, 0.9);
+	padding-top: 70px;
+	padding-bottom: 111px;
+	.title {
+		text-align: center;
+	}
+	.classified {
+		display: flex;
+		justify-content: space-between;
+		width: 75%;
+		margin: 0 auto 55px;
+		button {
+			border: 1px solid $title-color;
+			border-radius: 30px;
+			height: 50px;
+			background-color: transparent;
+			color: $title-color;
+			font-weight: 700;
+			width: 22%;
+			font-size: 18px;
+			transition: 0.3s;
+		}
+		button.active {
+			background-color: $title-color;
+			color: #fff;
+			border: 1px solid $title-color;
+		}
+		button:hover {
+			background-color: $title-color;
+			color: #fff;
+			border: 1px solid $title-color;
+		}
+	}
+	.port-box {
+		margin-top: 50px;
+		position: relative;
+		.port-pic {
+			width: 100%;
+			height: 0;
+			padding-bottom: 32%;
+			background-color: rgb(200, 225, 255);
+			border-radius: 80px 0 80px 0;
+		}
+		.text {
+			padding-left: 50px;
+			h5 {
+				font-size: 20px;
+				color: $title-color;
+				letter-spacing: 1.32px;
+				font-weight: 700;
+				margin-bottom: 8px;
+			}
+			span {
+				font-size: 14px;
+				color: #bbbbbb;
+				letter-spacing: 0.93px;
+				font-weight: 700;
+				margin-right: 5px;
+			}
+			p {
+				margin-top: 15px;
+				font-size: 18px;
+				letter-spacing: 1.19px;
+			}
+			button {
+				width: 130px;
+				height: 45px;
+				background-color: #F8CC85;
+				border: 0;
+				border-radius: 10px;
+				box-shadow: 0 2px 4px rgba(204,204,204,0.5);
+				position: absolute;
+				bottom: 10px;
+				a {
+					color: #fff;
+					font-weight: 700;
+					letter-spacing: 0.79px;
+					font-size: 18px;
+					display: block;
+					width: 100%;
+					height: 100%;
+					line-height: 45px;
+				}
+			}
+		}
+	}
+	.port-box:nth-child(even) {
+		.text {
+			order: 1;
+			padding-left: 0;
+		}
+		.port-pic {
+			order: 2;
+			border-radius: 0 80px 0 80px;
+		}
+	}
+}
+
+footer {
+	background-color: #B2C4E8;
+	text-align: center;
+	color: #fff;
+	font-family: $title-font;
+	font-size: 16px;
+	padding: 20px 0 10px;
+	font-weight: 500;
+	letter-spacing: 0.7px;
+	
+}
