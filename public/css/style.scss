@@ -484,3 +484,14 @@ footer {
 		width: 49%;
 	}
 }
+
+@media screen and (min-width: 1024px) {
+	.myphoto {
+		width: 30%;
+	padding-bottom: 35%;
+	}
+	#introduce {
+		padding-left: 85px;
+		width: 55%;
+	}
+}
