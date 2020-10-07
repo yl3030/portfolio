@@ -72,6 +72,7 @@ header .main-text {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   text-align: center;
+  width: 90%;
 }
 
 header .main-text h1 {
@@ -92,6 +93,8 @@ header .main-text h4 {
   letter-spacing: 0.7px;
   padding: 6px 10px;
   border-radius: 0 13px 0 13px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .myphoto {
@@ -126,7 +129,7 @@ header .main-text h4 {
 
 #introduce {
   display: inline-block;
-  width: 60%;
+  width: 55%;
   vertical-align: top;
   padding-left: 85px;
   padding-top: 65px;
@@ -445,6 +448,8 @@ footer {
   }
   header .main-text h4 {
     font-size: 14px;
+    width: 400px;
+    margin: 0 auto;
   }
   .myphoto {
     width: 100%;
@@ -517,6 +522,13 @@ footer {
   }
   header .main-text h4 {
     font-size: 12px;
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  header .main-text h4 {
+    width: 100%;
   }
 }
 
@@ -524,20 +536,199 @@ footer {
   header .main-text {
     width: 90%;
   }
+  header .main-text h4 {
+    width: 95%;
+  }
 }
 
 @media screen and (min-width: 769px) {
+  header .main-text {
+    width: 60%;
+  }
+  header .main-text h1 {
+    font-size: 45px;
+  }
+  header .main-text h4 {
+    font-size: 14px;
+    width: 400px;
+  }
+  .title {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  .myphoto {
+    width: 100%;
+    padding-bottom: 116.6666%;
+  }
+  #introduce {
+    padding-left: 0;
+    width: 100%;
+  }
+  #aboutme-cont #experience {
+    width: 55%;
+    padding-right: 5px;
+  }
+  #aboutme-cont #experience .expe {
+    margin-top: 10px;
+  }
+  #aboutme-cont #experience .expe .period {
+    display: block;
+    width: 160px;
+    margin-bottom: 10px;
+    padding: 5px 0;
+  }
+  #aboutme-cont #experience .expe .content {
+    width: 100%;
+    padding-left: 0;
+  }
+  #aboutme-cont #experience .expe .content ul li {
+    margin-top: 11px;
+  }
+  #aboutme-cont #experience .expe .content ul li:nth-child(1) {
+    margin-top: 0;
+  }
+  #aboutme-cont #skills {
+    width: 45%;
+  }
+  #aboutme-cont #skills .skills {
+    margin-top: 37px;
+  }
+  #aboutme-cont #skills .skills:nth-child(1) {
+    margin-top: 0;
+  }
+  .portfolio .classified {
+    width: 100%;
+  }
+  .portfolio .port-box .port-cont .port-pic {
+    border-radius: 50px 0 50px 0;
+  }
+  .portfolio .port-box .port-cont .text {
+    padding-left: 25px;
+  }
+  .portfolio .port-box .port-cont .text h5 {
+    font-size: 18px;
+    margin-bottom: 3px;
+  }
+  .portfolio .port-box .port-cont .text p {
+    margin-top: 0;
+  }
+  .portfolio .port-box .port-cont .text button {
+    bottom: 0;
+    height: 40px;
+    width: 100px;
+  }
+  .portfolio .port-box .port-cont .text button a {
+    line-height: 40px;
+  }
+  .portfolio .port-box:nth-child(even) .port-cont .port-pic {
+    border-radius: 0 50px 0 50px;
+  }
+}
+
+@media screen and (min-width: 900px) {
   .myphoto {
     width: 50%;
     padding-bottom: 58.3333%;
   }
   #introduce {
     padding-left: 15px;
+    padding-top: 40px;
     width: 49%;
+  }
+  #introduce .contact {
+    margin-top: 30px;
+  }
+  #introduce .contact .contact-cont {
+    margin-bottom: 8px;
   }
 }
 
 @media screen and (min-width: 1024px) {
+  header .main-text {
+    width: auto;
+  }
+  header .main-text h1 {
+    font-size: 50px;
+  }
+  header .main-text h4 {
+    font-size: 16px;
+    width: 100%;
+  }
+  .title {
+    font-size: 30px;
+    margin-bottom: 25px;
+  }
+  #introduce .contact {
+    margin-top: 70px;
+  }
+  #introduce .contact .contact-cont {
+    margin-bottom: 13px;
+  }
+  #aboutme-cont #experience {
+    width: 60%;
+    padding-right: 15px;
+  }
+  #aboutme-cont #experience .expe {
+    margin-top: 30px;
+  }
+  #aboutme-cont #experience .expe .period {
+    display: inline-block;
+    width: 26%;
+    margin-bottom: 0;
+    padding: 7px 0;
+  }
+  #aboutme-cont #experience .expe .content {
+    width: 73%;
+    padding-left: 13px;
+  }
+  #aboutme-cont #experience .expe .content ul li {
+    margin-top: 13px;
+  }
+  #aboutme-cont #experience .expe .content ul li:nth-child(1) {
+    margin-top: 0;
+  }
+  #aboutme-cont #experience .expe:nth-child(1) {
+    margin-top: 0;
+  }
+  #aboutme-cont #skills {
+    width: 40%;
+  }
+  #aboutme-cont #skills .skills {
+    margin-top: 28px;
+  }
+  #aboutme-cont #skills .skills:nth-child(1) {
+    margin-top: 0;
+  }
+  .portfolio .classified {
+    width: 75%;
+  }
+  .portfolio .port-box .port-cont .port-pic {
+    border-radius: 80px 0 80px 0;
+  }
+  .portfolio .port-box .port-cont .text {
+    padding-left: 50px;
+  }
+  .portfolio .port-box .port-cont .text h5 {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+  .portfolio .port-box .port-cont .text p {
+    margin-top: 15px;
+  }
+  .portfolio .port-box .port-cont .text button {
+    bottom: 10px;
+    height: 45px;
+    width: 130px;
+  }
+  .portfolio .port-box .port-cont .text button a {
+    line-height: 45px;
+  }
+  .portfolio .port-box:nth-child(even) .port-cont .port-pic {
+    border-radius: 0 80px 0 80px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
   .myphoto {
     width: 30%;
     padding-bottom: 35%;
