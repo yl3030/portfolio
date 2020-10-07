@@ -44,7 +44,7 @@ header {
 			li {
 				display: inline-block;
 				line-height: 100px;
-				margin-left: 35px;
+				width: 130px;
 				font-family: $title-font;
 				font-size: 16px;
 				color: #ffffff;
@@ -52,11 +52,12 @@ header {
 				font-weight: 500;
 				transition: 0.3s;
 				text-align: center;
+				cursor: pointer;
 			}
 			li:hover {
 				color: #76a4ff;
 				font-weight: 700;
-				text-shadow: 0 1px 2px rgba(224, 224, 224, 0.5);;
+				text-shadow: 0 1px 2px rgba(224, 224, 224, 0.5);
 			}
 		}
 	}
@@ -151,6 +152,7 @@ header {
 	margin-top: 55px;
 	display: flex;
 	justify-content: space-between;
+	flex-wrap: wrap;
 	#experience {
 		padding-right: 15px;
 		width: 60%;
@@ -191,7 +193,7 @@ header {
 						font-size: 16px;
 						letter-spacing: 2.09px;
 						margin-top: 13px;
-						font-family: PingFangTC,微軟正黑體;
+						font-family: PingFangTC, 微軟正黑體;
 					}
 					li:nth-child(1) {
 						margin-top: 0;
@@ -263,76 +265,81 @@ header {
 			transition: 0.3s;
 		}
 		button.active {
-			background-color: #A5BCE7;
+			background-color: #a5bce7;
 			color: #fff;
-			border: 1px solid #A5BCE7;
+			border: 1px solid #a5bce7;
 		}
 		button:hover {
-			background-color: #A5BCE7;
+			background-color: #a5bce7;
 			color: #fff;
-			border: 1px solid #A5BCE7;
+			border: 1px solid #a5bce7;
 		}
 	}
 	.port-box {
 		margin-top: 50px;
 		position: relative;
-		.port-pic {
-			width: 100%;
-			height: 0;
-			padding-bottom: 32%;
-			background-color: rgb(200, 225, 255);
-			border-radius: 80px 0 80px 0;
-			box-shadow: 0 5px 7px rgba(84,84,84,0.2);
-		}
-		.text {
-			padding-left: 50px;
-			h5 {
-				font-size: 20px;
-				color: $title-color;
-				letter-spacing: 1.32px;
-				font-weight: 700;
-				margin-bottom: 8px;
+		.port-cont {
+			display: flex;
+			flex-wrap: wrap;
+			.port-pic {
+				width: 50%;
+				height: 0;
+				padding-bottom: 32%;
+				background-color: rgb(200, 225, 255);
+				border-radius: 80px 0 80px 0;
+				box-shadow: 0 5px 7px rgba(84, 84, 84, 0.2);
 			}
-			span {
-				font-size: 14px;
-				color: #bbbbbb;
-				letter-spacing: 0.93px;
-				font-weight: 700;
-				margin-right: 5px;
-			}
-			p {
-				margin-top: 15px;
-				font-size: 16px;
-				letter-spacing: 1.19px;
-				line-height: 30px;
-			}
-			button {
-				width: 130px;
-				height: 45px;
-				background-color: #F8CC85;
-				border: 0;
-				border-radius: 10px;
-				box-shadow: 0 2px 4px rgba(204,204,204,0.5);
-				position: absolute;
-				bottom: 10px;
-				overflow: hidden;
-				transition: 0.3s;
-				a {
-					color: #fff;
+			.text {
+				padding-left: 50px;
+				width: 50%;
+				h5 {
+					font-size: 20px;
+					color: $title-color;
+					letter-spacing: 1.32px;
 					font-weight: 700;
-					letter-spacing: 0.79px;
-					font-size: 16px;
-					display: block;
-					width: 100%;
-					height: 100%;
-					line-height: 45px;
-					transition: 0.3s;
+					margin-bottom: 8px;
 				}
-			}
-			button:hover {
-				background-color: rgb(255, 219, 161);
-				a{
-					color: rgb(144, 176, 231);
+				span {
+					font-size: 14px;
+					color: #bbbbbb;
+					letter-spacing: 0.93px;
+					font-weight: 700;
+					margin-right: 5px;
+				}
+				p {
+					margin-top: 15px;
+					font-size: 16px;
+					letter-spacing: 1.19px;
+					line-height: 30px;
+				}
+				button {
+					width: 130px;
+					height: 45px;
+					background-color: #f8cc85;
+					border: 0;
+					border-radius: 10px;
+					box-shadow: 0 2px 4px rgba(204, 204, 204, 0.5);
+					position: absolute;
+					bottom: 10px;
+					overflow: hidden;
+					transition: 0.3s;
+					a {
+						color: #fff;
+						font-weight: 700;
+						letter-spacing: 0.79px;
+						font-size: 16px;
+						display: block;
+						width: 100%;
+						height: 100%;
+						line-height: 45px;
+						transition: 0.3s;
+					}
+				}
+				button:hover {
+					background-color: rgb(255, 219, 161);
+					a {
+						color: rgb(144, 176, 231);
+					}
 				}
 			}
 		}
@@ -350,7 +357,7 @@ header {
 }
 
 footer {
-	background-color: #B2C4E8;
+	background-color: #b2c4e8;
 	text-align: center;
 	color: #fff;
 	font-family: $title-font;
@@ -358,4 +365,122 @@ footer {
 	padding: 20px 0 10px;
 	font-weight: 500;
 	letter-spacing: 0.7px;
+}
+
+@media screen and (max-width: 768px) {
+	header {
+		.main-text {
+			width: 60%;
+			h1 {
+				font-size: 40px;
+			}
+			h4 {
+				font-size: 14px;
+			}
+		}
+	}
+	.myphoto {
+		width: 100%;
+		padding-bottom: 116.6666%;
+	}
+
+	#introduce {
+		width: 100%;
+		padding-left: 0;
+	}
+
+	#aboutme-cont {
+		#experience {
+			width: 100%;
+			.expe {
+				.period {
+					margin-bottom: 15px;
+					width: 160px;
+				}
+				.content {
+					display: block;
+					padding-left: 0;
+					width: 100%;
+				}
+			}
+		}
+		#skills {
+			width: 100%;
+			margin-top: 55px;
+			padding-left: 0;
+		}
+	}
+
+	.portfolio {
+		.classified {
+			width: 100%;
+			button {
+				font-size: 16px;
+			}
+		}
+		.port-box {
+			.port-cont {
+				.port-pic {
+					width: 100%;
+					padding-bottom: 64%;
+				}
+				.text {
+					width: 100%;
+					padding-left: 0;
+					margin-top: 40px;
+					button {
+						position: static;
+						font-size: 15px;
+						width: 100px;
+						height: 40px;
+						a {
+							line-height: 40px;
+						}
+					}
+				}
+			}
+		}
+		.port-box:nth-child(even) {
+			.text {
+				order: 2;
+			}
+			.port-pic {
+				order: 1;
+				border-radius: 80px 0 80px 0;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 660px) {
+	header {
+		.main-text {
+			width: 60%;
+			h1 {
+				font-size: 30px;
+			}
+			h4 {
+				font-size: 12px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 515px) {
+	header {
+		.main-text {
+			width: 90%;
+		}
+	}
+}
+
+@media screen and (min-width: 769px) {
+	.myphoto {
+		width: 50%;
+		padding-bottom: 58.3333%;
+	}
+	#introduce {
+		padding-left: 15px;
+		width: 49%;
+	}
 }
