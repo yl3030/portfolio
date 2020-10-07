@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YouZhen Lin | Portfolio</title>
+     <!-- AOS CSS CDN -->
+     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -16,8 +18,8 @@
         <nav class="container">
             <img src="" alt="" id="logo">
             <ul>
-                <li>About me</li>
-                <li>Portfolio</li>
+                <li data-goto-target="#introduce" data-goto-duration="300">About me</li>
+                <li data-goto-target=".portfolio" data-goto-duration="500">Portfolio</li>
             </ul>
         </nav>
         <div class="main-text">
@@ -175,10 +177,10 @@
         <div class="container">
             <h4 class="title">Portfolio</h4>
             <div class="classified">
-                <button class="active">All</button>
-                <button>Website</button>
-                <button>APP</button>
-                <button>Graphic</button>
+                <button class="btn-all active">All</button>
+                <button class="btn-web">Website</button>
+                <button class="btn-app">APP</button>
+                <button class="btn-graphic">Graphic</button>
             </div>
             <div class="pb">
                 <div class="port-box">
@@ -233,20 +235,6 @@
                         <div class="text">
                             <h5>電商平台購物車頁面設計</h5>
                             <span>2020.10</span>
-                            <span>|</span>
-                            <span>website design</span>
-                            <p>
-                            </p>
-                            <button><a href="#">more</a></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="port-box">
-                    <div class="port-cont web">
-                        <div class="port-pic"></div>
-                        <div class="text">
-                            <h5>國家再生能源憑證中心-綠色企業宣告專區</h5>
-                            <span>2020.09</span>
                             <span>|</span>
                             <span>website design</span>
                             <p>
@@ -406,6 +394,12 @@
     <!-- awesomefont CDN -->
     <script src="https://kit.fontawesome.com/69fd600045.js" crossorigin="anonymous"></script>
 
+     <!-- AOS JS CDN -->
+     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+     <script>
+         AOS.init();
+     </script>
+
     <!-- Bootstrap JS CDN -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
@@ -419,6 +413,7 @@
 
     <!-- jQuery CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="public/js/index.js"></script>
 </body>
 
 </html>
