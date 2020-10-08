@@ -41,6 +41,11 @@ header {
 		height: 100px;
 		display: flex;
 		justify-content: space-between;
+		img {
+			width: auto;
+			height: 50px;
+			margin-top: 25px;
+		}
 		ul {
 			li {
 				display: inline-block;
@@ -232,15 +237,31 @@ header {
 				background-color: #f0f0f0;
 				.length {
 					height: 100%;
-					background-color: #c3d3f2;
 					border-radius: 15px;
-					width: 60%;
+					.length-color {
+						background-color: #c3d3f2;
+						height: 100%;
+						border-radius: 15px;
+						width: 100%;
+						animation: skillBar 2s ease;
+						animation-fill-mode: forwards;
+						display: none;
+					}
 				}
 			}
 		}
 	}
 	.skills:nth-child(1) {
 		margin-top: 0;
+	}
+}
+
+@keyframes skillBar {
+	0% {
+		width: 0;
+	}
+	100% {
+		width: 100%;
 	}
 }
 
@@ -265,7 +286,7 @@ header {
 			color: $title-color;
 			font-weight: 700;
 			width: 22%;
-			font-size: 18px;
+			font-size: 16px;
 			transition: 0.3s;
 		}
 		button.active {
@@ -291,7 +312,6 @@ header {
 				padding-bottom: 32%;
 				background-color: rgb(200, 225, 255);
 				border-radius: 80px 0 80px 0;
-				box-shadow: 0 5px 7px rgba(84, 84, 84, 0.2);
 			}
 			.text {
 				padding-left: 50px;
@@ -307,7 +327,6 @@ header {
 					font-size: 14px;
 					color: #bbbbbb;
 					letter-spacing: 0.93px;
-					font-weight: 700;
 					margin-right: 5px;
 				}
 				p {
