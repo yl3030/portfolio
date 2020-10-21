@@ -37,33 +37,59 @@ header {
 	background-attachment: fixed;
 	@include bg-img;
 	position: relative;
-	nav {
+	.navbar {
 		height: 100px;
-		display: flex;
-		justify-content: space-between;
+		width: 100%;
+		position: fixed;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		padding: 0;
+		transition: 0.5s;
+		z-index: 1;
+		nav {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			height: 100%;
+			img {
+				width: auto;
+				height: 50px;
+			}
+			ul {
+				margin: 0;
+				li {
+					display: inline-block;
+					line-height: 100px;
+					width: 130px;
+					font-family: $title-font;
+					font-size: 16px;
+					color: #ffffff;
+					letter-spacing: 0.76px;
+					font-weight: 500;
+					transition: 0.3s;
+					text-align: center;
+					cursor: pointer;
+				}
+				li:hover {
+					color: #76a4ff;
+					font-weight: 700;
+					text-shadow: 0 1px 2px rgba(224, 224, 224, 0.5);
+				}
+			}
+		}
+	}
+	.navbar.scrolldown {
+		height: 60px;
+		background-color: rgba(255, 255, 255, 0.9);
+		box-shadow: 0 2px 4px rgba(88, 88, 88, 0.15);
 		img {
-			width: auto;
-			height: 50px;
-			margin-top: 25px;
+			height: 45px;
 		}
 		ul {
 			li {
-				display: inline-block;
-				line-height: 100px;
-				width: 130px;
-				font-family: $title-font;
-				font-size: 16px;
-				color: #ffffff;
-				letter-spacing: 0.76px;
-				font-weight: 500;
-				transition: 0.3s;
-				text-align: center;
-				cursor: pointer;
-			}
-			li:hover {
 				color: #76a4ff;
-				font-weight: 700;
-				text-shadow: 0 1px 2px rgba(224, 224, 224, 0.5);
+				line-height: 60px;
 			}
 		}
 	}
@@ -273,31 +299,48 @@ header {
 	.title {
 		text-align: center;
 	}
-	.classified {
-		display: flex;
-		justify-content: space-between;
-		width: 75%;
-		margin: 0 auto 55px;
-		button {
-			border: 1px solid $title-color;
-			border-radius: 30px;
-			height: 50px;
-			background-color: transparent;
-			color: $title-color;
-			font-weight: 700;
-			width: 22%;
-			font-size: 16px;
-			transition: 0.3s;
+	.c-box {
+		z-index: 1;
+		width: 100%;
+		transition: 0.5s;
+		.classified {
+			display: flex;
+			justify-content: space-between;
+			width: 55%;
+			margin: 0 auto 55px;
+			button {
+				border: 1px solid $title-color;
+				border-radius: 30px;
+				height: 50px;
+				background-color: transparent;
+				color: $title-color;
+				font-weight: 700;
+				width: 22%;
+				font-size: 16px;
+				transition: 0.3s;
+			}
+			button.active {
+				background-color: #a5bce7;
+				color: #fff;
+				border: 1px solid #a5bce7;
+			}
+			button:hover {
+				background-color: #a5bce7;
+				color: #fff;
+				border: 1px solid #a5bce7;
+			}
 		}
-		button.active {
-			background-color: #a5bce7;
-			color: #fff;
-			border: 1px solid #a5bce7;
-		}
-		button:hover {
-			background-color: #a5bce7;
-			color: #fff;
-			border: 1px solid #a5bce7;
+	}
+	.c-box.scrolldown {
+		position: sticky;
+		top: 60px;
+		background-color: rgba(246, 250, 255, 0.9);
+		box-shadow: 0 2px 4px rgba(88, 88, 88, 0.15);
+		.classified {
+			button {
+				border: 0;
+				border-radius: 0;
+			}
 		}
 	}
 	.port-box {
@@ -311,7 +354,9 @@ header {
 				height: 0;
 				padding-bottom: 32%;
 				background-color: rgb(200, 225, 255);
-				border-radius: 80px 0 80px 0;
+				border-radius:50px 0 50px 0;
+				@include bg-img;
+				box-shadow: 0 3px 6px rgba(71, 71, 71, 0.2);
 			}
 			.text {
 				padding-left: 50px;
@@ -374,7 +419,7 @@ header {
 		}
 		.port-pic {
 			order: 2;
-			border-radius: 0 80px 0 80px;
+			border-radius:50px 0 50px 0;
 		}
 	}
 }
@@ -437,10 +482,13 @@ footer {
 	}
 
 	.portfolio {
-		.classified {
-			width: 100%;
-			button {
-				font-size: 16px;
+		.c-box{
+			padding: 0 16px;	
+			.classified {
+				width: 100%;
+				button {
+					font-size: 16px;
+				}
 			}
 		}
 		.port-box {
@@ -480,6 +528,34 @@ footer {
 
 @media screen and (max-width: 660px) {
 	header {
+		.navbar {
+			height: 80px;
+			nav {
+				img {
+					height: 45px;
+				}
+				ul {
+					li {
+						color: #76a4ff;
+						font-size: 15px;
+						width: 100px;
+						line-height: 80px;
+					}
+				}
+			}
+		}
+		.navbar.scrolldown {
+			nav {
+				img {
+					height: 40px;
+				}
+				ul {
+					li {
+						line-height: 65px;
+					}
+				}
+			}
+		}
 		.main-text {
 			width: 60%;
 			h1 {
@@ -512,6 +588,44 @@ footer {
 			}
 		}
 	}
+	.portfolio {
+		.c-box {
+			.classified {
+				button {
+					border: 0;
+					font-size: 14px;
+					width: 25%;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 400px) {
+	header {
+		.navbar {
+			nav {
+				img {
+					height: 35px;
+				}
+				ul {
+					li {
+						font-size: 13px;
+						width: 90px;
+					}
+				}
+			}
+		}
+	}
+	.portfolio {
+		.c-box {
+			.classified {
+				button {
+					font-size: 12px;
+				}
+			}
+		}
+	}
 }
 
 @media screen and (min-width: 769px) {
@@ -539,7 +653,7 @@ footer {
 		padding-left: 0;
 		width: 100%;
 	}
-	#aboutme-cont{
+	#aboutme-cont {
 		#experience {
 			width: 55%;
 			padding-right: 5px;
@@ -554,11 +668,11 @@ footer {
 				.content {
 					width: 100%;
 					padding-left: 0;
-					ul{
-						li{
+					ul {
+						li {
 							margin-top: 11px;
 						}
-						li:nth-child(1){
+						li:nth-child(1) {
 							margin-top: 0;
 						}
 					}
@@ -575,14 +689,16 @@ footer {
 			}
 		}
 	}
-	.portfolio{
-		.classified {
-			width: 100%;
+	.portfolio {
+		.c-box {
+			.classified {
+				width: 90%;
+			}
 		}
 		.port-box {
-			.port-cont{
-				.port-pic{
-					border-radius:50px 0 50px 0;
+			.port-cont {
+				.port-pic {
+					border-radius: 50px 0 50px 0;
 				}
 				.text {
 					padding-left: 25px;
@@ -590,8 +706,8 @@ footer {
 						font-size: 18px;
 						margin-bottom: 3px;
 					}
-					p{
-						margin-top:0;
+					p {
+						margin-top: 0;
 					}
 					button {
 						bottom: 0;
@@ -605,9 +721,9 @@ footer {
 			}
 		}
 		.port-box:nth-child(even) {
-			.port-cont{
-				.port-pic{
-					border-radius:0 50px 0 50px;
+			.port-cont {
+				.port-pic {
+					border-radius: 0 50px 0 50px;
 				}
 			}
 		}
@@ -630,7 +746,6 @@ footer {
 			}
 		}
 	}
-	
 }
 
 @media screen and (min-width: 1024px) {
@@ -648,7 +763,7 @@ footer {
 	}
 	.title {
 		font-size: 30px;
-		margin-bottom:25px;
+		margin-bottom: 25px;
 	}
 	#introduce {
 		.contact {
@@ -658,7 +773,7 @@ footer {
 			}
 		}
 	}
-	#aboutme-cont{
+	#aboutme-cont {
 		#experience {
 			width: 60%;
 			padding-right: 15px;
@@ -673,11 +788,11 @@ footer {
 				.content {
 					width: 73%;
 					padding-left: 13px;
-					ul{
-						li{
+					ul {
+						li {
 							margin-top: 13px;
 						}
-						li:nth-child(1){
+						li:nth-child(1) {
 							margin-top: 0;
 						}
 					}
@@ -697,14 +812,16 @@ footer {
 			}
 		}
 	}
-	.portfolio{
-		.classified {
-			width: 75%;
+	.portfolio {
+		.c-box {
+			.classified {
+				width: 55%;
+			}
 		}
 		.port-box {
-			.port-cont{
-				.port-pic{
-					border-radius:80px 0 80px 0;
+			.port-cont {
+				.port-pic {
+					border-radius:50px 0 50px 0;
 				}
 				.text {
 					padding-left: 50px;
@@ -712,8 +829,8 @@ footer {
 						font-size: 20px;
 						margin-bottom: 8px;
 					}
-					p{
-						margin-top:15px;
+					p {
+						margin-top: 15px;
 					}
 					button {
 						bottom: 10px;
@@ -727,9 +844,9 @@ footer {
 			}
 		}
 		.port-box:nth-child(even) {
-			.port-cont{
-				.port-pic{
-					border-radius:0 80px 0 80px;
+			.port-cont {
+				.port-pic {
+					border-radius:50px 0 50px 0;
 				}
 				.text {
 					padding-left: 0;

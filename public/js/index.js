@@ -3,7 +3,7 @@ $("*").each(function () {
 		var target = $(this).attr("data-goto-target");
 		if (target != undefined) {
 			var dur = $(this).attr("data-goto-duration");
-			var top = $(target).offset().top;
+			var top = $(target).offset().top - $(".navbar").height() - 20;
 			$("html,body").animate({ scrollTop: top }, parseInt(dur));
 		}
 	});
@@ -12,24 +12,13 @@ $(window).on("mousewheel", function () {
 	$("*").stop();
 });
 
-$(".classified")
-	.children("button")
-	.click(function () {
-		$(".classified").children("button").removeClass("active");
-		$(this).addClass("active");
-		$(".port-cont").parents(".port-box").fadeOut(300);
-		if ($(this).hasClass("btn-all")) {
-			$(".port-cont").parents(".port-box").fadeIn(300);
-		} else if ($(this).hasClass("btn-web")) {
-			$(".port-cont.web").parents(".port-box").fadeIn(300);
-		} else if ($(this).hasClass("btn-app")) {
-			$(".port-cont.app").parents(".port-box").fadeIn(300);
-		} else if ($(this).hasClass("btn-graphic")) {
-			$(".port-cont.graphic").parents(".port-box").fadeIn(300);
-		}
-	});
-
 $(window).on("resize scroll", function () {
+	var headerHeight = $("header").height() - $(".navbar").height();
+	if ($(window).scrollTop() > headerHeight) {
+		$(".navbar").addClass("scrolldown");
+	} else {
+		$(".navbar").removeClass("scrolldown");
+	}
 	var skHeightforLg_start = $(".myphoto").width() * 1.17 + 160;
 	var skHeightforLg_end =
 		$("header").height() +
@@ -43,17 +32,18 @@ $(window).on("resize scroll", function () {
 		$(".myphoto").width() * 1.17 +
 		$("#introduce").height() +
 		$("#aboutme-cont").height() +
-        110;
-        var skHeightforSm_start =
-		$(".myphoto").width() * 1.17 + $("#introduce").height() + $("#experience").height() + 280;
+		110;
+	var skHeightforSm_start =
+		$(".myphoto").width() * 1.17 +
+		$("#introduce").height() +
+		$("#experience").height() +
+		280;
 	var skHeightforSm_end =
 		$("header").height() +
 		$(".myphoto").width() * 1.17 +
 		$("#introduce").height() +
 		$("#aboutme-cont").height() +
 		130;
-	console.log("scrollTop:" + $(window).scrollTop());
-	console.log("width:" + $(window).width());
 	if ($(window).width() > 900 || $(window).width() == 900) {
 		if (
 			$(window).scrollTop() > skHeightforLg_start &&
@@ -84,5 +74,77 @@ $(window).on("resize scroll", function () {
 		} else {
 			$(".length-color").css("display", "none");
 		}
-    }
+	}
+
+	var portHeightLg =
+		$("header").height() +
+		$(".myphoto").width() * 1.17 +
+		$("#aboutme-cont").height() +
+		55 +
+		50 +
+		70 +
+		$(".portfolio").children(".title").height() +
+		25 -
+		$(".navbar").height();
+	var portHeightSm = portHeightLg + $("#introduce").height() + 65;
+	if ($(window).width() > 900 || $(window).width() == 900) {
+		if ($(window).scrollTop() > portHeightLg) {
+			$(".c-box").addClass("scrolldown");
+		} else {
+			$(".c-box").removeClass("scrolldown");
+		}
+	} else {
+		if ($(window).scrollTop() > portHeightSm) {
+			$(".c-box").addClass("scrolldown");
+		} else {
+			$(".c-box").removeClass("scrolldown");
+		}
+	}
 });
+
+$(".classified")
+	.children("button")
+	.click(function () {
+		var portHeightLg =
+			$("header").height() +
+			$(".myphoto").width() * 1.17 +
+			$("#aboutme-cont").height() +
+			55 +
+			50 +
+			70 +
+			$(".portfolio").children(".title").height() +
+			25 -
+			$(".navbar").height();
+		var portHeightSm = portHeightLg + $("#introduce").height() + 65;
+		if (!$(this).hasClass("active")) {
+			$(".classified").children("button").removeClass("active");
+			$(this).addClass("active");
+			$(".port-cont").parents(".port-box").fadeOut(300);
+			if ($(window).width() > 900 || $(window).width() == 900) {
+				if ($(window).scrollTop() > portHeightLg) {
+					var cTop =
+						$(".pb").offset().top -
+						$(".navbar").height() -
+						$(".navbar").height();
+					$("html,body").animate({ scrollTop: cTop }, 300);
+				}
+			} else {
+				if ($(window).scrollTop() > portHeightSm) {
+					var cTop =
+						$(".pb").offset().top -
+						$(".navbar").height() -
+						$(".navbar").height();
+					$("html,body").animate({ scrollTop: cTop }, 300);
+				}
+			}
+			if ($(this).hasClass("btn-all")) {
+				$(".port-cont").parents(".port-box").fadeIn(300);
+			} else if ($(this).hasClass("btn-web")) {
+				$(".port-cont.web").parents(".port-box").fadeIn(300);
+			} else if ($(this).hasClass("btn-app")) {
+				$(".port-cont.app").parents(".port-box").fadeIn(300);
+			} else if ($(this).hasClass("btn-graphic")) {
+				$(".port-cont.graphic").parents(".port-box").fadeIn(300);
+			}
+		}
+	});
