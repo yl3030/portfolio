@@ -1,5 +1,13 @@
 $title-font: BanglaMN;
 $title-color: #7b98cf;
+$list-color:#76a4ff;
+$second-title-color:#718aba;
+$icon-color:#95abd7;
+$bg-color:#8da6d6;
+$length-color:#c3d3f2;
+$class-btn-color:#a5bce7;
+$cross-color: #adc8ff;
+$footer-color:#b2c4e8;
 @mixin bg-img {
 	background-size: cover;
 	background-position: center center;
@@ -72,7 +80,7 @@ header {
 					cursor: pointer;
 				}
 				li:hover {
-					color: #76a4ff;
+					color: $list-color;
 					font-weight: 700;
 					text-shadow: 0 1px 2px rgba(224, 224, 224, 0.5);
 				}
@@ -88,7 +96,7 @@ header {
 		}
 		ul {
 			li {
-				color: #76a4ff;
+				color: $list-color;
 				line-height: 60px;
 			}
 		}
@@ -112,7 +120,7 @@ header {
 			font-family: DINAlternate;
 			font-weight: 700;
 			font-size: 16px;
-			color: #718aba;
+			color: $second-title-color;
 			background-color: #fff;
 			letter-spacing: 0.7px;
 			padding: 6px 10px;
@@ -169,7 +177,7 @@ header {
 			line-height: 20px;
 			i {
 				font-size: 20px;
-				color: #95abd7;
+				color: $icon-color;
 				display: inline-block;
 				vertical-align: middle;
 				margin-right: 15px;
@@ -196,7 +204,7 @@ header {
 			.period {
 				width: 26%;
 				display: inline-block;
-				background-color: #8da6d6;
+				background-color: $bg-color;
 				vertical-align: top;
 				padding: 7px 0;
 				border-radius: 15px 0 15px 0;
@@ -265,7 +273,7 @@ header {
 					height: 100%;
 					border-radius: 15px;
 					.length-color {
-						background-color: #c3d3f2;
+						background-color: $length-color;
 						height: 100%;
 						border-radius: 15px;
 						width: 100%;
@@ -320,14 +328,14 @@ header {
 				transition: 0.3s;
 			}
 			button.active {
-				background-color: #a5bce7;
+				background-color: $class-btn-color;
 				color: #fff;
-				border: 1px solid #a5bce7;
+				border: 1px solid $class-btn-color;
 			}
 			button:hover {
-				background-color: #a5bce7;
+				background-color: $class-btn-color;
 				color: #fff;
-				border: 1px solid #a5bce7;
+				border: 1px solid $class-btn-color;
 			}
 		}
 	}
@@ -354,7 +362,7 @@ header {
 				height: 0;
 				padding-bottom: 32%;
 				background-color: rgb(200, 225, 255);
-				border-radius:50px 0 50px 0;
+				border-radius: 50px 0 50px 0;
 				@include bg-img;
 				box-shadow: 0 3px 6px rgba(71, 71, 71, 0.2);
 			}
@@ -391,6 +399,10 @@ header {
 					bottom: 10px;
 					overflow: hidden;
 					transition: 0.3s;
+					color: #fff;
+					font-weight: 700;
+					letter-spacing: 0.79px;
+					font-size: 16px;
 					a {
 						color: #fff;
 						font-weight: 700;
@@ -405,10 +417,12 @@ header {
 				}
 				button:hover {
 					background-color: rgb(255, 219, 161);
-					a {
-						color: rgb(144, 176, 231);
-					}
 				}
+			}
+		}
+		.port-cont#port-concert {
+			.port-pic {
+				background-position: 50% 60% !important;
 			}
 		}
 	}
@@ -419,13 +433,100 @@ header {
 		}
 		.port-pic {
 			order: 2;
-			border-radius:50px 0 50px 0;
+			border-radius: 50px 0 50px 0;
+		}
+	}
+	.port-show {
+		.modal-dialog {
+			width: 90%;
+			margin: 50px auto;
+			.modal-body {
+				position: relative;
+				padding: 0;
+				.close {
+					position: absolute;
+					top: 0;
+					right: -30px;
+					opacity: 1;
+					text-shadow: none;
+					transition: 0.5s;
+					i {
+						font-size: 28px;
+						color: #fff;
+					}
+				}
+				.close:hover {
+					opacity: 1;
+					transform: rotate(180deg);
+					i {
+						color: $cross-color;
+					}
+				}
+				img {
+					width: 100%;
+				}
+				.port-caro {
+					.carousel-indicators {
+						li {
+							width: 10px;
+							height: 10px;
+							border-radius: 50%;
+							background-color: transparent;
+							border: 2px solid $icon-color;
+							margin-right: 5px;
+							margin-left: 5px;
+						}
+						li.active {
+							background-color: $icon-color;
+						}
+					}
+					.caro-arrow {
+						width: 40px;
+						height: 40px;
+						border-radius: 50%;
+						background-color: $footer-color;
+						top: 50%;
+						transform: translateY(-50%);
+						box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+						.ca {
+							background-size: 80%;
+						}
+					}
+					.caro-arrow.carousel-control-prev {
+						left: 25px;
+					}
+					.caro-arrow.carousel-control-next {
+						right: 25px;
+					}
+				}
+			}
+		}
+	}
+	.port-show#travel-app {
+		.modal-dialog {
+			margin: 100px auto;
+		}
+	}
+	.port-show#trec-graphic {
+		.modal-dialog {
+			margin: 100px auto;
+		}
+	}
+	.port-show#concert-poster {
+		.modal-dialog {
+			width: 40%;
+			margin: 30px auto;
+		}
+	}
+	.port-show#greeting-card {
+		.modal-dialog {
+			width: 70%;
 		}
 	}
 }
 
 footer {
-	background-color: #b2c4e8;
+	background-color: $footer-color;
 	text-align: center;
 	color: #fff;
 	font-family: $title-font;
@@ -434,6 +535,14 @@ footer {
 	font-weight: 500;
 	letter-spacing: 0.7px;
 }
+
+
+
+
+
+
+
+
 
 @media screen and (max-width: 768px) {
 	header {
@@ -482,8 +591,8 @@ footer {
 	}
 
 	.portfolio {
-		.c-box{
-			padding: 0 16px;	
+		.c-box {
+			padding: 0 16px;
 			.classified {
 				width: 100%;
 				button {
@@ -511,6 +620,12 @@ footer {
 							line-height: 40px;
 						}
 					}
+				}
+			}
+			.modal-dialog {
+				margin: 6rem auto;
+				.close {
+					display: none;
 				}
 			}
 		}
@@ -566,6 +681,18 @@ footer {
 				width: 90%;
 			}
 		}
+	}
+}
+
+@media (min-width: 576px) {
+	.modal-dialog {
+		max-width: 1000px;
+	}
+}
+
+@media (max-width: 576px) {
+	.modal-dialog {
+		width: 80%;
 	}
 }
 
@@ -821,7 +948,7 @@ footer {
 		.port-box {
 			.port-cont {
 				.port-pic {
-					border-radius:50px 0 50px 0;
+					border-radius: 50px 0 50px 0;
 				}
 				.text {
 					padding-left: 50px;
@@ -846,7 +973,7 @@ footer {
 		.port-box:nth-child(even) {
 			.port-cont {
 				.port-pic {
-					border-radius:50px 0 50px 0;
+					border-radius: 50px 0 50px 0;
 				}
 				.text {
 					padding-left: 0;

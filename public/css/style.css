@@ -485,6 +485,10 @@ header .main-text h4 {
   overflow: hidden;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.79px;
+  font-size: 16px;
 }
 
 .portfolio .port-box .port-cont .text button a {
@@ -504,8 +508,8 @@ header .main-text h4 {
   background-color: #ffdba1;
 }
 
-.portfolio .port-box .port-cont .text button:hover a {
-  color: #90b0e7;
+.portfolio .port-box .port-cont#port-concert .port-pic {
+  background-position: 50% 60% !important;
 }
 
 .portfolio .port-box:nth-child(even) .text {
@@ -520,6 +524,100 @@ header .main-text h4 {
       -ms-flex-order: 2;
           order: 2;
   border-radius: 50px 0 50px 0;
+}
+
+.portfolio .port-show .modal-dialog {
+  width: 90%;
+  margin: 50px auto;
+}
+
+.portfolio .port-show .modal-dialog .modal-body {
+  position: relative;
+  padding: 0;
+}
+
+.portfolio .port-show .modal-dialog .modal-body .close {
+  position: absolute;
+  top: 0;
+  right: -30px;
+  opacity: 1;
+  text-shadow: none;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.portfolio .port-show .modal-dialog .modal-body .close i {
+  font-size: 28px;
+  color: #fff;
+}
+
+.portfolio .port-show .modal-dialog .modal-body .close:hover {
+  opacity: 1;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.portfolio .port-show .modal-dialog .modal-body .close:hover i {
+  color: #adc8ff;
+}
+
+.portfolio .port-show .modal-dialog .modal-body img {
+  width: 100%;
+}
+
+.portfolio .port-show .modal-dialog .modal-body .port-caro .carousel-indicators li {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 2px solid #95abd7;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.portfolio .port-show .modal-dialog .modal-body .port-caro .carousel-indicators li.active {
+  background-color: #95abd7;
+}
+
+.portfolio .port-show .modal-dialog .modal-body .port-caro .caro-arrow {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #b2c4e8;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.portfolio .port-show .modal-dialog .modal-body .port-caro .caro-arrow .ca {
+  background-size: 80%;
+}
+
+.portfolio .port-show .modal-dialog .modal-body .port-caro .caro-arrow.carousel-control-prev {
+  left: 25px;
+}
+
+.portfolio .port-show .modal-dialog .modal-body .port-caro .caro-arrow.carousel-control-next {
+  right: 25px;
+}
+
+.portfolio .port-show#travel-app .modal-dialog {
+  margin: 100px auto;
+}
+
+.portfolio .port-show#trec-graphic .modal-dialog {
+  margin: 100px auto;
+}
+
+.portfolio .port-show#concert-poster .modal-dialog {
+  width: 40%;
+  margin: 30px auto;
+}
+
+.portfolio .port-show#greeting-card .modal-dialog {
+  width: 70%;
 }
 
 footer {
@@ -598,6 +696,12 @@ footer {
   .portfolio .port-box .port-cont .text button a {
     line-height: 40px;
   }
+  .portfolio .port-box .modal-dialog {
+    margin: 6rem auto;
+  }
+  .portfolio .port-box .modal-dialog .close {
+    display: none;
+  }
   .portfolio .port-box:nth-child(even) .text {
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
@@ -639,6 +743,18 @@ footer {
   header .main-text h4 {
     font-size: 12px;
     width: 90%;
+  }
+}
+
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 1000px;
+  }
+}
+
+@media (max-width: 576px) {
+  .modal-dialog {
+    width: 80%;
   }
 }
 
