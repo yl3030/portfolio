@@ -694,6 +694,31 @@ footer {
 	.modal-dialog {
 		width: 80%;
 	}
+
+	.portfolio{
+		.port-show {
+			.modal-dialog {
+				.modal-body {
+					.port-caro {
+						.caro-arrow {
+							background-color: transparent;
+							box-shadow: none;
+						}
+					}
+				}
+			}
+		}
+		.port-show#concert-poster {
+			.modal-dialog {
+				width: 90%;
+			}
+		}
+		.port-show#greeting-card {
+			.modal-dialog {
+				width: 90%;
+			}
+		}
+	}
 }
 
 @media screen and (max-width: 570px) {
